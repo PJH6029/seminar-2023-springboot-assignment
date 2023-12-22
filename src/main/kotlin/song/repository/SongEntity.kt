@@ -1,5 +1,6 @@
 package com.wafflestudio.seminar.spring2023.song.repository
 
+import com.wafflestudio.seminar.spring2023.playlist.repository.PlaylistSongEntity
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -20,4 +21,6 @@ class SongEntity (
     val album: AlbumEntity,
     @OneToMany(mappedBy = "song")
     val songArtists: List<SongArtistEntity>,
+    @OneToMany(mappedBy = "song")
+    val playlistSongs: List<PlaylistSongEntity>,
 )
